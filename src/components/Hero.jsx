@@ -7,7 +7,7 @@ export default function Hero() {
 
         {/* LEFT CONTENT */}
         <div className="left">
-          <img src="src\assets\IMG_20260201_133736.jpg.jpeg" alt="profile" />
+          <img src="/IMG_20260201_133736.jpg.jpeg" alt="profile" />
 
           <div className="info">
             <h1>Hemanathan M</h1>
@@ -18,7 +18,7 @@ export default function Hero() {
             </p>
 
             <div className="buttons">
-              <a href="src/assets/Resume.pdf" download>
+              <a href="/Resume.pdf" download>
                 <button className="primary">Download Resume</button>
               </a>
              <button className="outline"
