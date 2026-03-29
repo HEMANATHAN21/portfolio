@@ -90,7 +90,7 @@ export default function Hero() {
   align-items: center;
 }
 
-/* ✅ MAKE IMAGE RESPONSIVE */
+/* MAKE IMAGE RESPONSIVE */
 .left img {
   width: 100%;
   max-width: 280px;
@@ -123,7 +123,7 @@ export default function Hero() {
   margin: 24px 0;
   display: flex;
   gap: 16px;
-  flex-wrap: wrap; /* ✅ FIX */
+  flex-wrap: wrap; 
 }
 
 .primary,
@@ -139,6 +139,11 @@ export default function Hero() {
   color: #e5e7eb;
   flex-wrap: wrap;
 }
+  /* FORCE SAME COLOR FOR ALL ICONS */
+.icons svg {
+  color: inherit;
+  fill: currentColor;
+}
 
 /* DIVIDER */
 .divider {
@@ -152,7 +157,7 @@ export default function Hero() {
 
 /* SUMMARY */
 .summary {
-  width: 100%; /* ✅ FIX overflow */
+  width: 100%; 
   line-height: 1.8;
 }
 
@@ -160,9 +165,7 @@ export default function Hero() {
   text-align: justify;
 }
 
-/* ========================= */
-/* 📱 TABLET */
-/* ========================= */
+/* TABLET */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
@@ -178,9 +181,7 @@ export default function Hero() {
   }
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .hero-section {

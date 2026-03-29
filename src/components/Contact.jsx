@@ -119,9 +119,7 @@ button:hover {
   color: #e5e7eb;
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
   #contact {

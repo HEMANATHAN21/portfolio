@@ -42,7 +42,7 @@ export default function Skills() {
 
       <style>{`
 
-/* ❌ REMOVE FIXED HEIGHT */
+/* REMOVE FIXED HEIGHT */
 #skills{
   min-height: auto;
   padding: 20px 16px;
@@ -66,7 +66,7 @@ export default function Skills() {
   gap: 10px;
   font-weight: 500;
   transition: all 0.3s ease;
-  flex: 0 1 auto; /* ✅ prevents overflow */
+  flex: 0 1 auto; 
 }
 
 /* DARK MODE */
@@ -99,9 +99,7 @@ export default function Skills() {
   color: #3b82f6;
 }
 
-/* ========================= */
-/* 📱 TABLET */
-/* ========================= */
+/* TABLET */
 @media (max-width: 1024px) {
   .grid {
     gap: 16px;
@@ -113,16 +111,14 @@ export default function Skills() {
   }
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/* MOBILE */
 @media (max-width: 600px) {
   .grid {
     gap: 12px;
   }
 
   .card {
-    min-width: 45%; /* ✅ 2 per row */
+    min-width: 45%; 
     justify-content: center;
   }
 

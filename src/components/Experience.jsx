@@ -86,7 +86,7 @@ export default function Experience() {
 
       <style>{`
 
-/* ❌ REMOVE FIXED HEIGHT */
+/* REMOVE FIXED HEIGHT */
 #experience{
   min-height: auto;
   padding: 40px 16px;
@@ -213,9 +213,7 @@ export default function Experience() {
   color: #020617;
 }
 
-/* ========================= */
-/* 📱 TABLET */
-/* ========================= */
+/*  TABLET */
 @media (max-width: 1024px) {
   .exp-container {
     grid-template-columns: 1fr;
@@ -228,9 +226,7 @@ export default function Experience() {
   }
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .exp-container {

@@ -60,7 +60,7 @@ export default function Navbar({ dark, setDark }) {
           </span>
         ))}
 
-        {/* 🔵 ONE SMOOTH INDICATOR */}
+        {/* SMOOTH INDICATOR */}
         <div ref={indicatorRef} className="indicator" />
       </div>
 
@@ -79,7 +79,7 @@ nav {
   align-items: center;
   padding: 16px 8%;
   backdrop-filter: blur(10px);
-  flex-wrap: wrap; /* ✅ allow wrap */
+  flex-wrap: wrap; 
 }
 
 /* TITLE */
@@ -92,7 +92,7 @@ nav h3 {
   position: relative;
   display: flex;
   gap: 32px;
-  flex-wrap: wrap; /* ✅ wrap instead of overflow */
+  flex-wrap: wrap; 
   justify-content: center;
 }
 
@@ -122,9 +122,8 @@ button {
   cursor: pointer;
 }
 
-/* ========================= */
-/* 📱 TABLET */
-/* ========================= */
+
+/*  TABLET */
 @media (max-width: 1024px) {
   nav {
     padding: 12px 5%;
@@ -135,9 +134,7 @@ button {
   }
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/* MOBILE */
 @media (max-width: 768px) {
 
   nav {
@@ -154,7 +151,7 @@ button {
     gap: 16px;
   }
 
-  /* ❌ Disable indicator when wrapped */
+  /* Disable indicator when wrapped */
   .indicator {
     display: none;
   }

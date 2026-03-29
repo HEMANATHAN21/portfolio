@@ -54,7 +54,7 @@ export default function Projects() {
 #projects {
   padding: 60px 16px;
   max-width: 1500px;
-  margin: 0 auto; /* ✅ center properly */
+  margin: 0 auto; 
 }
 
 /* GRID */
@@ -114,7 +114,7 @@ export default function Projects() {
   display: flex;
   gap: 16px;
   margin-top: 16px;
-  flex-wrap: wrap; /* ✅ FIX overflow */
+  flex-wrap: wrap; 
 }
 
 .links a {
@@ -126,18 +126,14 @@ export default function Projects() {
   font-weight: 500;
 }
 
-/* ========================= */
-/* 📱 TABLET */
-/* ========================= */
+/*  TABLET */
 @media (max-width: 1024px) {
   .projects-grid {
     gap: 20px;
   }
 }
 
-/* ========================= */
-/* 📱 MOBILE */
-/* ========================= */
+/*  MOBILE */
 @media (max-width: 768px) {
 
   #projects {
