@@ -6,7 +6,7 @@ export default function Navbar({ dark, setDark }) {
   const indicatorRef = useRef(null);
   const menuRef = useRef({});
 
-  const sections = ["hero", "skills", "experience", "projects", "contact"];
+  const sections = ["profile", "skills", "experience", "projects", "contact"];
 
   const scrollTo = (id) => {
     setActive(id);
@@ -69,46 +69,104 @@ export default function Navbar({ dark, setDark }) {
       </button>
 
       <style>{`
-        nav {
-          position: sticky;
-          top: 0;
-          z-index: 10;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 16px 8%;
-          backdrop-filter: blur(10px);
-        }
 
-        .menu {
-          position: relative;
-          display: flex;
-          gap: 32px;
-        }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap; /* ✅ allow wrap */
+}
 
-        .menu span {
-          cursor: pointer;
-          font-weight: 500;
-          padding-bottom: 10px;
-        }
+/* TITLE */
+nav h3 {
+  white-space: nowrap;
+}
 
-        /* SLIDING LINE */
-        .indicator {
-          position: absolute;
-          bottom: 0;
-          height: 3px;
-          background: #3b82f6;
-          border-radius: 4px;
-          transition: all 0.35s ease;
-        }
+/* MENU */
+.menu {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap; /* ✅ wrap instead of overflow */
+  justify-content: center;
+}
 
-        button {
-          background: none;
-          border: none;
-          font-size: 18px;
-          cursor: pointer;
-        }
-      `}</style>
+/* MENU ITEMS */
+.menu span {
+  cursor: pointer;
+  font-weight: 500;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+/* INDICATOR */
+.indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 4px;
+  transition: all 0.35s ease;
+}
+
+/* BUTTON */
+button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  nav {
+    padding: 12px 5%;
+  }
+
+  .menu {
+    gap: 20px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav h3 {
+    font-size: 16px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  /* ❌ Disable indicator when wrapped */
+  .indicator {
+    display: none;
+  }
+
+  button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+}
+
+`}</style>
     </nav>
   );
 }

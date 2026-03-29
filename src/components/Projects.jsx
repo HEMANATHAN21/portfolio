@@ -49,85 +49,115 @@ export default function Projects() {
       </div>
 
       <style>{`
-        #projects {
-          padding: 80px 24px;
-        //   max-width: 1200px;
-          margin: 130px;
-         width:85%;
-         height:15vh;
 
-        }
+/* SECTION */
+#projects {
+  padding: 60px 16px;
+  max-width: 1500px;
+  margin: 0 auto; /* ✅ center properly */
+}
 
-        h2 {
-          text-align: center;
-          margin-bottom: 50px;
-        }
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
 
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 30px;
-        }
+/* CARD */
+.project-card {
+  padding: 24px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  text-align: justify;
+}
 
-        .project-card {
-          padding: 26px;
-          border-radius: 18px;
-          transition: all 0.3s ease;
-        //   width : 100%;
-        text-align: justify;
-        }
+/* DARK MODE */
+.dark .project-card {
+  background: rgba(255,255,255,0.06);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+  color: #e5e7eb;
+}
 
-        /* DARK MODE */
-        .dark .project-card {
-          background: rgba(255,255,255,0.06);
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
-          color: #e5e7eb;
-        }
+.dark .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(59,130,246,0.35);
+}
 
-        .dark .project-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 0 20px rgba(59,130,246,0.35);
-        }
+/* LIGHT MODE */
+.light .project-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 
-        /* LIGHT MODE */
-        .light .project-card {
-          background: #ffffff;
-          border: 1px solid #e5e7eb;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        }
+.light .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(59,130,246,0.25);
+  border-color: #3b82f6;
+}
 
-        .light .project-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 12px 26px rgba(59,130,246,0.25);
-          border-color: #3b82f6;
-        }
+/* TEXT */
+.desc {
+  margin: 12px 0;
+  line-height: 1.6;
+}
 
-        .desc {
-          margin: 12px 0;
-          line-height: 1.6;
-        }
+.tech {
+  font-size: 14px;
+  color: #3b82f6;
+  font-weight: 600;
+}
 
-        .tech {
-          font-size: 14px;
-          color: #3b82f6;
-          font-weight: 600;
-        }
+/* LINKS */
+.links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap; /* ✅ FIX overflow */
+}
 
-        .links {
-          display: flex;
-          gap: 18px;
-          margin-top: 16px;
-        }
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 500;
+}
 
-        .links a {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          text-decoration: none;
-          color: #3b82f6;
-          font-weight: 500;
-        }
-      `}</style>
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  .projects-grid {
+    gap: 20px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  #projects {
+    padding: 40px 12px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .links {
+    justify-content: center;
+  }
+}
+
+`}</style>
     </section>
   );
 }

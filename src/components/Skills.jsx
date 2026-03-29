@@ -41,58 +41,97 @@ export default function Skills() {
       </div>
 
       <style>{`
-      #skills{
-      height: 10vh;
-      }
-        .grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          justify-content: center;
-        }
 
-        .card {
-          min-width: 140px;
-          padding: 14px 20px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-weight: 500;
-          transition: all 0.3s ease;
-        }
+/* ❌ REMOVE FIXED HEIGHT */
+#skills{
+  min-height: auto;
+  padding: 20px 16px;
+}
 
-        /* DARK MODE */
-        .dark .card {
-          background: rgba(255, 255, 255, 0.08);
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
-          color: #e5e7eb;
-        }
+/* GRID */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-        .dark .card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 0 15px rgba(59,130,246,0.35);
-        }
+/* CARD */
+.card {
+  min-width: 140px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 0 1 auto; /* ✅ prevents overflow */
+}
 
-        /* LIGHT MODE */
-        .light .card {
-          background: #ffffff;
-        //   border: 1px solid #e5e7eb;
-          color: #020617;
-          box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-        }
+/* DARK MODE */
+.dark .card {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  color: #e5e7eb;
+}
 
-        .light .card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(59,130,246,0.25);
-          border-color: #3b82f6;
-        }
+.dark .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(59,130,246,0.35);
+}
 
-        .icon {
-          font-size: 18px;
-          color: #3b82f6;
-        }
-      `}</style>
+/* LIGHT MODE */
+.light .card {
+  background: #ffffff;
+  color: #020617;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.light .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(59,130,246,0.25);
+}
+
+/* ICON */
+.icon {
+  font-size: 18px;
+  color: #3b82f6;
+}
+
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  .grid {
+    gap: 16px;
+  }
+
+  .card {
+    min-width: 120px;
+    padding: 12px 16px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 600px) {
+  .grid {
+    gap: 12px;
+  }
+
+  .card {
+    min-width: 45%; /* ✅ 2 per row */
+    justify-content: center;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+}
+
+`}</style>
     </section>
   );
 }

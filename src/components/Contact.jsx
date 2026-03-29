@@ -70,49 +70,80 @@ ${form.message}
       </form>
 
       <style>{`
-        #contact {
-          padding: 80px 24px;
-          text-align: center;
-        }
 
-        form {
-          max-width: 500px;
-          margin: auto;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
+#contact {
+  padding: 60px 16px;
+  text-align: center;
+}
 
-        input, textarea {
-          padding: 14px;
-          border-radius: 10px;
-          border: 1px solid #e5e7eb;
-          font-size: 14px;
-          outline: none;
-        }
+/* FORM */
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-        button {
-          background: #3b82f6;
-          color: white;
-          border: none;
-          padding: 14px;
-          border-radius: 10px;
-          font-size: 15px;
-          cursor: pointer;
-        }
+/* INPUTS */
+input, textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  width: 100%; /* ✅ prevent overflow */
+}
 
-        button:hover {
-          background: #2563eb;
-        }
+/* BUTTON */
+button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
 
-        /* Dark mode support */
-        .dark input,
-        .dark textarea {
-          background: rgba(255,255,255,0.08);
-          border: 1px solid rgba(255,255,255,0.15);
-          color: #e5e7eb;
-        }
-      `}</style>
+button:hover {
+  background: #2563eb;
+}
+
+/* DARK MODE */
+.dark input,
+.dark textarea {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #e5e7eb;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  #contact {
+    padding: 40px 12px;
+  }
+
+  form {
+    gap: 14px;
+  }
+
+  input, textarea {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+`}</style>
     </section>
   );
 }

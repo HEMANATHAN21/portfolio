@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="hero-section" id="hero">
+    <section className="hero-section" id="profile">
       <div className="hero">
 
         {/* LEFT CONTENT */}
@@ -61,172 +61,163 @@ export default function Hero() {
 
       <style>{`
 
-      #hero{
-      height: 25vh;
+/* REMOVE FIXED HEIGHT */
+#hero{
+  min-height: auto;
+}
 
-      
-      }
+/* LAYOUT */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 32px;
+}
 
-      .icons a {
-        color: inherit;      /*  keeps original icon color */
-        text-decoration: none;
-        }
-        /* LAYOUT */
-        .summary-text {
-            text-align: justify;
-            line-height: 1.8;
-        }
-        .hero-section {
-          display: flex;
-          justify-content: center;
-          padding: 80px 32px;
-        }
+.hero {
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.4fr 1px 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
 
-        .hero {
-          max-width: 1400px;
-          width: 100%;
-          display: grid;
-          grid-template-columns: 1.6fr 1px 1.2fr;
-          gap: 48px;
-          align-items: center;
-        }
+/* LEFT */
+.left {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: center;
+}
 
-        /* LEFT */
-        .left {
-          display: grid;
-          grid-template-columns: 280px 1fr;
-          gap: 36px;
-          align-items: center;
-        }
+/* ✅ MAKE IMAGE RESPONSIVE */
+.left img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
 
-        .left img {
-          width: 280px;
-          height: 360px;
-          object-fit: cover;
-          border-radius: 22px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
-        }
+/* TEXT */
+.info h1 {
+  font-size: 42px;
+  margin: 0;
+}
 
-        .info h1 {
-          font-size: 42px;
-          margin: 0;
-        }
+.info h3 {
+  margin: 10px 0;
+  color: #60a5fa;
+}
 
-        .info h3 {
-          margin: 10px 0;
-          color: #60a5fa;
-        }
+.tagline {
+  margin-top: 6px;
+  max-width: 520px;
+  color: #9ca3af;
+}
 
-        .tagline {
-          margin-top: 6px;
-          max-width: 520px;
-          color: #9ca3af;
-        }
+/* BUTTONS */
+.buttons {
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; /* ✅ FIX */
+}
 
-        .buttons {
-          margin: 24px 0;
-          display: flex;
-          gap: 16px;
-        }
+.primary,
+.outline {
+  padding: 12px 20px; /* slightly smaller */
+}
 
-        .primary {
-          background: #3b82f6;
-          color: white;
-          border: none;
-          padding: 12px 26px;
-          border-radius: 10px;
-          cursor: pointer;
-        }
+/* ICONS */
+.icons {
+  display: flex;
+  gap: 18px;
+  font-size: 22px;
+  color: #e5e7eb;
+  flex-wrap: wrap;
+}
 
-        .outline {
-          background: transparent;
-          border: 1px solid #3b82f6;
-          color: #3b82f6;
-          padding: 12px 26px;
-          border-radius: 10px;
-          cursor: pointer;
-        }
+/* DIVIDER */
+.divider {
+  width: 1px;
+  height: 70%;
+  background: rgba(255, 255, 255, 0.15);
+}
+  .light .divider {
+  background: #d1d5db; /* soft gray */
+}
 
-        .icons {
-          display: flex;
-          gap: 18px;
-          font-size: 22px;
-          color: #e5e7eb;
-        }
+/* SUMMARY */
+.summary {
+  width: 100%; /* ✅ FIX overflow */
+  line-height: 1.8;
+}
 
-        /* DIVIDER LINE */
-        .divider {
-          width: 1px;
-          height: 70%;
-          background: rgba(255, 255, 255, 0.15);
-        }
+.summary-text {
+  text-align: justify;
+}
 
-        /* SUMMARY (NO BOX) */
-        .summary {
-          width: 120%; 
-          line-height: 1.8;
-        }
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-        .summary h4 {
-          font-size: 18px;
-          margin-bottom: 16px;
-          color: #60a5fa;
-        }
+  .divider {
+    display: none;
+  }
 
-        .summary p {
-          margin-bottom: 14px;
-          color: #e5e7eb;
-        }
+  .summary {
+    text-align: center;
+  }
+}
 
-        /* LIGHT MODE */
-        .light .tagline {
-          color: #374151;
-        }
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
 
-        .light .icons {
-          color: #1f2937;
-        }
+  .hero-section {
+    padding: 40px 16px;
+  }
 
-        .light .divider {
-          background: #d1d5db;
-        }
+  .left {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-        .light .summary h4 {
-          color: #2563eb;
-          font-weight: 700;
-        }
+  .left img {
+    margin: auto;
+  }
 
-        .light .summary p {
-          color: #111827;
-          font-weight: 500;
-        }
+  .info h1 {
+    font-size: 32px;
+  }
 
-        /* MOBILE */
-        @media (max-width: 900px) {
-          .hero {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
+  .buttons {
+    justify-content: center;
+  }
 
-          .divider {
-            display: none;
-          }
+  .icons {
+    justify-content: center;
+  }
 
-          .left {
-            grid-template-columns: 1fr;
-            text-align: center;
-          }
+  .summary {
+    text-align: center;
+  }
 
-          .left img {
-            margin: auto;
-          }
+  .summary-text {
+    text-align: left; /* better readability */
+  }
+}
 
-          .buttons,
-          .icons {
-            justify-content: center;
-          }
-        }
-      `}</style>
+`}</style>
     </section>
   );
 }
