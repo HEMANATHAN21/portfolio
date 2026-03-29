@@ -141,7 +141,7 @@ export default function Hero() {
 }
   /* FORCE SAME COLOR FOR ALL ICONS */
 .icons svg {
-  color: inherit;
+  color: #3b82f6;;
   fill: currentColor;
 }
 
